@@ -95,6 +95,7 @@ boost
                 BOOST_QVM_ASSERT(row>=0);
                 BOOST_QVM_ASSERT(row<rows);
                 return vec_traits<OriginalVector>::read_element_idx(row,reinterpret_cast<OriginalVector const &>(x));
+                (void)col;
                 }
 
             static
@@ -106,6 +107,7 @@ boost
                 BOOST_QVM_ASSERT(row>=0);
                 BOOST_QVM_ASSERT(row<rows);
                 return vec_traits<OriginalVector>::write_element_idx(row,reinterpret_cast<OriginalVector &>(x));
+                (void)col;
                 }
             };
 
@@ -220,6 +222,7 @@ boost
                 BOOST_QVM_ASSERT(col>=0);
                 BOOST_QVM_ASSERT(col<cols);
                 return vec_traits<OriginalVector>::read_element_idx(col,reinterpret_cast<OriginalVector const &>(x));
+                (void)row; (void)col;
                 }
 
             static
@@ -231,6 +234,7 @@ boost
                 BOOST_QVM_ASSERT(col>=0);
                 BOOST_QVM_ASSERT(col<cols);
                 return vec_traits<OriginalVector>::write_element_idx(col,reinterpret_cast<OriginalVector &>(x));
+                (void)row; (void)col;
                 }
             };
 
@@ -547,6 +551,7 @@ boost
                 BOOST_QVM_ASSERT(row<rows);
                 BOOST_QVM_ASSERT(row==col);
                 return vec_traits<OriginalVector>::write_element_idx(row,reinterpret_cast<OriginalVector &>(x));
+                (void)row; (void)col;
                 }
             };
 
