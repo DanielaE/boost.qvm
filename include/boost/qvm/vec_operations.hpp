@@ -6,6 +6,11 @@
 #ifndef UUID_384AFF3AD23A11DFA80B754FE0D72085
 #define UUID_384AFF3AD23A11DFA80B754FE0D72085
 
+#if defined(_MSC_VER)
+# pragma warning(push)
+# pragma warning(disable: 4244) // narrowing conversion
+#endif
+
 #include <boost/qvm/vec_operations2.hpp>
 #include <boost/qvm/vec_operations3.hpp>
 #include <boost/qvm/vec_operations4.hpp>
@@ -1010,5 +1015,9 @@ boost
         ////////////////////////////////////////////////
         }
     }
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif
 
 #endif
