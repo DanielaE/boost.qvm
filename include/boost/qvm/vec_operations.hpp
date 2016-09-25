@@ -6,6 +6,11 @@
 #ifndef UUID_384AFF3AD23A11DFA80B754FE0D72085
 #define UUID_384AFF3AD23A11DFA80B754FE0D72085
 
+#if defined(_MSC_VER)
+# pragma warning(push)
+# pragma warning(disable: 4244) // narrowing conversion
+#endif
+
 #include <boost/qvm/vec_operations2.hpp>
 #include <boost/qvm/vec_operations3.hpp>
 #include <boost/qvm/vec_operations4.hpp>
@@ -255,7 +260,7 @@ boost
             static
             BOOST_QVM_INLINE_CRITICAL
             scalar_type
-            read_element( this_vector const & x )
+            read_element( this_vector const & )
                 {
                 BOOST_QVM_STATIC_ASSERT(I>=0);
                 BOOST_QVM_STATIC_ASSERT(I<Dim);
@@ -265,7 +270,7 @@ boost
             static
             BOOST_QVM_INLINE_CRITICAL
             scalar_type
-            read_element_idx( int i, this_vector const & x )
+            read_element_idx( int i, this_vector const & )
                 {
                 BOOST_QVM_ASSERT(i>=0);
                 BOOST_QVM_ASSERT(i<Dim);
@@ -982,5 +987,9 @@ boost
         ////////////////////////////////////////////////
         }
     }
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif
 
 #endif

@@ -7,6 +7,10 @@
 #include <boost/qvm/mat_operations.hpp>
 #include <boost/detail/lightweight_test.hpp>
 
+#if defined(BOOST_MSVC)
+# pragma warning(disable: 4706) //assignment within conditional expression
+#endif
+
 template <class T,class U>
 struct same_type;
 
